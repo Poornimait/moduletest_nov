@@ -107,3 +107,30 @@ header{
         width: 90vw;
     }
 }
+@media only screen and (min-width:360px) and (max-width: 440px) {
+    .set-timer {
+        width: 60vw;
+        height: auto;
+    }
+
+    .input-time input{
+        width: 30px;
+        font-size: 12px;
+    }
+    .label{
+        font-size: 12px;
+        font-weight: 500;;
+    }
+    #separator {
+        font-size: 0.2em;
+    }
+
+    #current-timers {
+        width: 60vw;
+    }
+    .set-button{
+        width:40px;
+        height:20px;
+        font-size: 9px;
+    }
+}
