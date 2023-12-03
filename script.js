@@ -3,20 +3,19 @@ function setTimer() {
     var originalContainer = document.getElementsByClassName('set-timer')[0];
 
     // Get input values
-    var hoursInput = originalContainer.getElementsByClassName('hours')[0];
-    var minutesInput = originalContainer.getElementsByClassName('minutes')[0];
-    var secondsInput = originalContainer.getElementsByClassName('seconds')[0];
+    var hoursInputO = originalContainer.getElementsByClassName('hours')[0];
+    var minutesInputO = originalContainer.getElementsByClassName('minutes')[0];
+    var secondsInputO = originalContainer.getElementsByClassName('seconds')[0];
 
     // Check if at least one input field is filled
-    if (!(hoursInput.value || minutesInput.value || secondsInput.value)) {
+    if (!(hoursInputO.value || minutesInputO.value || secondsInputO.value)) {
         alert('Please enter the time.');
         return;
     }
-    if (hoursInput.value>23 || minutesInput.value>59 || secondsInput.value>59) {
-        alert('Please enter the  valid time ,minutes and seconds must be less than 60 and hours less than 24.');
+    if (hoursInputO.value > 23 || minutesInputO.value > 59 || secondsInputO.value > 59) {
+        alert('Please enter valid time. Minutes and seconds should be less than 60 and hours less than 24');
         return;
     }
-
 
 
     var newContainer = originalContainer.cloneNode(true);
@@ -38,6 +37,9 @@ function setTimer() {
         deleteTimer(newContainer);
     };
     container.appendChild(newContainer);
+    hoursInputO.value = null;
+    minutesInputO.value = null;
+    secondsInputO.value = null;
     checkTimers();
     startTimer(hoursInput, minutesInput, secondsInput, totalSeconds,newContainer);
 }
